@@ -1,50 +1,60 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login Simple</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-box button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Bienvenido a Mi Página Web de Endri</h1>
-        <nav>
-            <ul>
-                <li><a href="https://www.facebook.com">Inicio</a></li>
-                <li><a href="#">Acerca de</a></li>
-                <li>
-                    <a href="#">Servicios</a>
-                    <ul class="submenu">
-                        <li>Diseño Web</li>
-                        <li>Desarrollo Frontend</li>
-                        <li>Optimización SEO</li>
-                    </ul>
-                </li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="contenido">
-            <img src="imagen.jpg" alt="Ejemplo" class="foto-relieve">
-            <div class="texto">
-                <h2>Sobre mí</h2>
-                <p>Hola, soy Endri Salazar, futuro desarrollador full stack. Esta es mi primera página web usando HTML, CSS y JavaScript publicada en GitHub Pages.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Mi Página Web - Todos los derechos reservados</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <div class="login-box">
+        <h2>Iniciar Sesión</h2>
+        <form>
+            <input type="text" placeholder="Usuario" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
 </body>
 </html>
-    <script src="script.js"></script>
-</body>
-</html>
-
-
