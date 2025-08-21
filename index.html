@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login con Validación</title>
+    <title>Login con múltiples usuarios</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -62,20 +62,31 @@
     </div>
 
     <script>
+        // Lista de usuarios permitidos
+        const usuarios = [
+            { nombre: "admin", password: "1234" },
+            { nombre: "endri", password: "5678" },
+            { nombre: "user1", password: "abcd" }
+        ];
+
         const form = document.getElementById("loginForm");
         const mensaje = document.getElementById("mensaje");
 
         form.addEventListener("submit", function(event) {
-            event.preventDefault(); // Evita que la página se recargue
+            event.preventDefault();
 
-            const usuario = document.getElementById("usuario").value;
-            const password = document.getElementById("password").value;
+            const usuarioInput = document.getElementById("usuario").value;
+            const passwordInput = document.getElementById("password").value;
 
-            // Validación simple
-            if (usuario === "admin" && password === "1234") {
+            // Buscar si el usuario existe y coincide la contraseña
+            const usuarioValido = usuarios.find(
+                u => u.nombre === usuarioInput && u.password === passwordInput
+            );
+
+            if (usuarioValido) {
                 mensaje.style.color = "green";
-                mensaje.textContent = "✅ Login exitoso. Bienvenido " + usuario;
-                // Aquí puedes redirigir a otra página
+                mensaje.textContent = "✅ Bienvenido " + usuarioValido.nombre;
+                // Redirección opcional:
                 // window.location.href = "dashboard.html";
             } else {
                 mensaje.style.color = "red";
@@ -85,4 +96,6 @@
     </script>
 </body>
 </html>
+
+
 
