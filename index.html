@@ -1,102 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login con múltiples usuarios</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .login-box {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 300px;
-        }
-        .login-box h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .login-box input {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .login-box button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .login-box button:hover {
-            background-color: #45a049;
-        }
-        .mensaje {
-            text-align: center;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Profesional Realista</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-box">
-        <h2>Iniciar Sesión</h2>
-        <h3>Web Endri Salazar</h3>
-        <form id="loginForm">
-            <input type="text" id="usuario" placeholder="Usuario" required>
-            <input type="password" id="password" placeholder="Contraseña" required>
-            <button type="submit">Ingresar</button>
-        </form>
-        <div class="mensaje" id="mensaje"></div>
-    </div>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <div class="input-group">
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <span class="icon" id="emailIcon"></span>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <span class="icon" id="passwordIcon"></span>
+      </div>
+      <button type="submit" id="loginButton">Ingresar</button>
+      <div id="spinner" class="hidden"></div>
+    </form>
+    <p id="message" class="fade"></p>
+  </div>
 
-    <script>
-        // Lista de usuarios permitidos
-        const usuarios = [
-            { nombre: "admin", password: "1234" },
-            { nombre: "endri", password: "5678" },
-            { nombre: "user1", password: "abcd" }
-        ];
-
-        const form = document.getElementById("loginForm");
-        const mensaje = document.getElementById("mensaje");
-
-        form.addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            const usuarioInput = document.getElementById("usuario").value;
-            const passwordInput = document.getElementById("password").value;
-
-            // Buscar si el usuario existe y coincide la contraseña
-            const usuarioValido = usuarios.find(
-                u => u.nombre === usuarioInput && u.password === passwordInput
-            );
-
-            if (usuarioValido) {
-                mensaje.style.color = "green";
-                mensaje.textContent = "✅ Bienvenido " + usuarioValido.nombre;
-                // Redirección opcional:
-                // window.location.href = "dashboard.html";
-            } else {
-                mensaje.style.color = "red";
-                mensaje.textContent = "❌ Usuario o contraseña incorrectos.";
-            }
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
