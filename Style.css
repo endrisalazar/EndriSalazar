@@ -1,100 +1,61 @@
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-}
-
-.login-container {
-  background-color: white;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.35);
-  width: 350px;
-  text-align: center;
-}
-
-.input-group {
-  position: relative;
-  margin: 12px 0;
-}
-
-input {
-  width: 100%;
-  padding: 12px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  transition: border-color 0.3s;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-input.error {
-  border-color: red;
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-input.success {
-  border-color: green;
+.login-container {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 320px;
 }
 
-.icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
+h1 {
+  margin-bottom: 20px;
+  color: #007bff;
 }
 
-button {
+form input {
   width: 100%;
   padding: 12px;
-  background-color: #007bff;
-  color: white;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
   border: none;
-  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 5px;
-  transition: background-color 0.3s;
+  transition: background 0.3s;
 }
 
-button:hover:not(:disabled) {
-  background-color: #0056b3;
-}
-
-button:disabled {
-  background-color: #999;
-  cursor: not-allowed;
+form button:hover {
+  background: #0056b3;
 }
 
 #message {
   margin-top: 15px;
   font-weight: bold;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-#message.show {
-  opacity: 1;
-}
-
-#spinner {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #007bff;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 10px auto;
-  animation: spin 1s linear infinite;
-}
-
-.hidden {
-  display: none;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 
